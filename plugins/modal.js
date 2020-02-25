@@ -1,3 +1,5 @@
+
+
 Element.prototype.appendAfter = function(element) {
     element.parentNode.insertBefore(this, element.nextSibling)
 }
@@ -72,6 +74,9 @@ $.modal = function(options) {
         },
         setContent(html) {
             $modal.querySelector('.modal-body').innerHTML = html
+        },
+        setTitle(str) {
+            $modal.querySelector('.modal-title').innerHTML = str
         }
     }
 
@@ -122,6 +127,11 @@ const DefaultModal = new ModalOptions(
         }}
     ]
 )
+
+const ApplesModal = new ModalOptions('Apples Price', true, `<p>$1.49</p>`,'',[{text: 'Close', type:'primary', handler: () => modal.close()}])
+const OrangesModal = new ModalOptions('Oranges Price', true, `<p>$2.99</p>`,'',[{text: 'Close', type:'primary', handler: () => modal.close()}])
+const MangoesModal = new ModalOptions('Mangoes Price', true, `<p>$4.99</p>`,'',[{text: 'Close', type:'primary', handler: () => modal.close()}])
+const PearsModal = new ModalOptions('Pears Price', true, `<p>$1.59</p>`,'',[{text: 'Close', type:'primary', handler: () => modal.close()}])
 
 const setHTMLTry = `
     <p>Changed HTML</p>

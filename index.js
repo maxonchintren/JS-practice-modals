@@ -1,4 +1,4 @@
-const modal = $.modal(DefaultModal)
+const modal = $.modal(ApplesModal)
 
 const card = $.card(FruitCards)
 
